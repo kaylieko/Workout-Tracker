@@ -1,0 +1,41 @@
+<h2>Edit Entry</h2>
+
+<form action="/update" method="get">
+<fieldset>
+	<legend>Modify the Entry</legend>
+	
+    	<p>
+    	<label for="name">Name:</label>
+    	<input type="text" name="name" id="name" value="{{this.name}}">
+    
+	<label for="reps">Reps:</label>
+    	<input type="number" name="reps" id="reps" value="{{this.reps}}">
+    
+	<label for="weight">Weight:</label>
+   	<input type="number" name="weight" id="weight" value="{{this.weight}}">
+
+    	{{#if lbs}}
+        <label>lbs</label>
+        <input type="radio" name="units" value="1" checked="true">
+        <label>kgs</label>
+        <input type="radio" name="units" value="0">
+    	{{else}}
+        <label>lbs</label>
+        <input type="radio" name="units" value="1">
+        <label>kgs</label>
+        <input type="radio" name="units" value="0" checked="true">
+    	{{/if}}
+	</p>
+	<p>
+	<label for="date">Date:</label>
+    	<input type="date" name="date" id="date" value="{{this.date}}">
+    	</p>
+
+
+    	<input type="hidden" name="id" value="{{this.id}}">
+    
+	<p>
+    	<input type="submit" value="Save" id="editSave">
+    	</p>
+</fieldset>
+</form>
